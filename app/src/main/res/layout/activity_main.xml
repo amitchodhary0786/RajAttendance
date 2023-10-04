@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3.5"
+    android:background="@color/design_default_color_primary">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            app:titleTextColor="#ffffff"
+            android:background="@color/design_default_color_primary"
+            android:outlineSpotShadowColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:weightSum="3">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="60dp"
+                    android:src="@drawable/doitc"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="5dp"></ImageView>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="Raj-Upasthiti"
+                    android:fontFamily="@font/poppinsblack"
+                    android:textSize="15dp"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"></TextView>
+
+                <ImageView
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:id="@+id/iv_logout"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logout"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="5dp"
+                    app:tint="@color/white"></ImageView>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.3"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:background="@drawable/loginback"
+        android:paddingBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version :  "
+                android:fontFamily="@font/poppinsreg"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:fontFamily="@font/poppinsreg"
+                android:textSize="10dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"></TextView>
+        </LinearLayout>
+        <ImageView
+            android:visibility="gone"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/doitc"
+            android:scaleType="centerCrop"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"></ImageView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:text="Current Date"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <!--on below line we are creating a text view-->
+            <DigitalClock
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="25dp"></DigitalClock>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2.2"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:background="@drawable/lldesign"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/user"
+                    android:scaleType="centerInside"
+                    app:tint="@color/design_default_color_primary"></ImageView>
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amit chodhary"
+                    android:fontFamily="@font/poppinsmed"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="5dp"></TextView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="15dp">
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/house"
+                    android:scaleType="centerInside"
+                    app:tint="@color/design_default_color_primary"></ImageView>
+
+                <TextView
+                    android:id="@+id/tv_deptname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rajasthan Technical University"
+                    android:fontFamily="@font/poppinsmed"
+                    android:gravity="bottom"
+                    android:textColor="@color/black"></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center|top"
+            android:layout_weight="2"
+            android:background="@color/white">
+            <androidx.cardview.widget.CardView
+                android:alpha=".7"
+                android:id="@+id/cv_markin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:translationZ="5dp"
+                android:clickable="true"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginTop="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="4"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="40dp"
+                        android:src="@drawable/user"></ImageView>
+                    <TextView
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:fontFamily="@font/poppinsmed"
+                        android:hint="Mark In"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"></TextView>
+
+                    <TextView
+                        android:id="@+id/tv_markintime"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:fontFamily="@font/poppinsreg"
+                        android:hint="00:00AM"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"></TextView>
+                    <ImageView
+                        android:id="@+id/iv_markin"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/success"
+                        android:visibility="invisible"></ImageView>
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:alpha=".7"
+                android:id="@+id/cv_markout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:translationZ="5dp"
+                android:clickable="true"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginTop="15dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:weightSum="4"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="40dp"
+                        android:src="@drawable/user"></ImageView>
+
+                    <TextView
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:fontFamily="@font/poppinsmed"
+                        android:hint="Mark Out"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"></TextView>
+
+                    <TextView
+                        android:id="@+id/tv_markouttime"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:fontFamily="@font/poppinsreg"
+                        android:hint="00:00AM"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"></TextView>
+                    <ImageView
+                        android:id="@+id/iv_markout"
+                        android:visibility="invisible"
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/success"></ImageView>
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:layout_weight=".4">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="aadhaar face authentication"
+                android:fontFamily="@font/poppinsreg"
+                android:textSize="15dp"
+                android:layout_marginLeft="40dp"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

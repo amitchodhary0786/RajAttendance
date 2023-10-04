@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#3F4EDA</color>
+    <color name="purple_700">#3F4EDA</color>
+    <color name="teal_200">#3F4EDA</color>
+    <color name="teal_700">#3F4EDA</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#3F4EDA</color>
+    <color name="light_color_primary">#636AE0 </color>
+    <color name="colorPrimaryDark">#3F4EDA</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="mdtp_white">#ffffff</color>
+    <color name="buttoncolor">#ed6404</color>
+    <color name="basicblack">#000000</color>
+    <color name="action_color">#3F4EDA</color>
+    <color name="view_line">#C0C0C0</color>
+    <color name="text_font_color">#3f3f3f</color>
+    <color name="statuscolor">#d520bc</color>
+    <color name="blue">#0000FF</color>
+    <color name="light_green">#00cd00</color>
+</resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3"
+    android:background="@color/design_default_color_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:background="@drawable/loginback"
+        android:paddingBottom="5dp">
+        <ImageView
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
+            android:src="@drawable/doitc"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Department of information techenalogy &amp; communication"
+            android:fontFamily="@font/poppinsmed"
+            android:textSize="12dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:background="@drawable/llstyle">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="राज उपस्थिति"
+            android:fontFamily="@font/poppinsblack"
+            android:textSize="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/design_default_color_primary"></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in to enter SSO ID and Password"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppinsreg"
+            android:textColor="@color/design_default_color_primary"></TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/ll_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            app:boxStrokeColor="@color/black"
+            android:textColorHint="@color/text_font_color"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/login_edtUsername"
+                android:inputType="text"
+                android:hint="sso Id"
+                android:enabled="true"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ic_person_accent_24dp"
+                android:drawableStart="@drawable/ic_person_accent_24dp"
+                android:fontFamily="@font/poppinsmed"
+                android:textColor="@color/text_font_color"
+                android:textColorHint="@color/text_font_color"
+
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/text_font_color"
+            app:startIconTint="@color/text_font_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="5dp"
+            android:backgroundTint="@color/text_font_color"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            app:boxStrokeColor="@color/black"
+            android:textColorHint="@color/text_font_color">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="password"
+                android:id="@+id/login_edtPassword"
+                android:enabled="true"
+                android:drawablePadding="8dp"
+                android:drawableLeft="@drawable/ic_lock_accent_24dp"
+                android:drawableStart="@drawable/ic_lock_accent_24dp"
+                android:fontFamily="@font/poppinsmed"
+                android:textColor="@color/text_font_color"
+                android:textColorHint="@color/text_font_color"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btn_loginsso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/mdtp_white"
+            android:text="SSO LogIn"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textAllCaps="false"
+            android:backgroundTint="#6200ee"
+            android:fontFamily="@font/poppinsmed"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:paddingBottom="2dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:src="@drawable/aadhaaricon"
+                android:scaleType="fitCenter"
+                android:padding="5dp"></ImageView>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="aadhaar face authentication"
+                android:fontFamily="@font/poppinsreg"
+                android:textSize="10dp"
+                android:layout_marginLeft="5dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/text_font_color"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
