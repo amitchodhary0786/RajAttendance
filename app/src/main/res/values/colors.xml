@@ -21,4 +21,6 @@
     <color name="statuscolor">#d520bc</color>
     <color name="blue">#0000FF</color>
     <color name="light_green">#00cd00</color>
+
+    <color name="appblue">#2B55E1</color>
 </resources>

@@ -118,7 +118,7 @@
                 android:text="Current Date"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="25sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <!--on below line we are creating a text view-->
@@ -213,7 +213,7 @@
                 app:cardElevation="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:foreground="?android:attr/selectableItemBackground"
+                android:foreground="@drawable/markinback"
                 android:layout_marginTop="15dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -225,22 +225,32 @@
                     android:weightSum="4"
                     android:gravity="center">
                     <ImageView
+                        android:id="@+id/iv_iconmarkin"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="40dp"
-                        android:src="@drawable/user"></ImageView>
+                        android:src="@drawable/markinicon"></ImageView>
                     <TextView
+                        android:id="@+id/tv_textmarkin"
                         android:textSize="22dp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:fontFamily="@font/poppinsmed"
+                        android:textColor="@color/appblue"
+                        android:textColorHint="@color/appblue"
+                        android:fontFamily="@font/poppinsreg"
                         android:hint="Mark In"
                         android:layout_width="0dp"
                         android:layout_weight="1.5"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"></TextView>
 
+
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="20dp"
+                        android:src="@drawable/timeicon"
+                        android:scaleType="centerInside"></ImageView>
                     <TextView
                         android:id="@+id/tv_markintime"
                         android:textSize="15dp"
@@ -252,13 +262,14 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"></TextView>
+
                     <ImageView
                         android:id="@+id/iv_markin"
                         android:layout_width="0dp"
                         android:layout_weight=".5"
                         android:layout_height="wrap_content"
                         android:src="@drawable/success"
-                        android:visibility="invisible"></ImageView>
+                        android:visibility="gone"></ImageView>
                 </LinearLayout>
 
 
@@ -276,7 +287,7 @@
                 app:cardElevation="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:foreground="?android:attr/selectableItemBackground"
+                android:foreground="@drawable/markinback"
                 android:layout_marginTop="15dp">
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -289,23 +300,31 @@
                     android:gravity="center">
 
                     <ImageView
+                        android:id="@+id/iv_iconmarkout"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="40dp"
-                        android:src="@drawable/user"></ImageView>
+                        android:src="@drawable/markouticon"></ImageView>
 
                     <TextView
+                        android:id="@+id/tv_textmarkout"
                         android:textSize="22dp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:fontFamily="@font/poppinsmed"
+                        android:textColor="@color/appblue"
+                        android:textColorHint="@color/appblue"
+                        android:fontFamily="@font/poppinsreg"
                         android:hint="Mark Out"
                         android:layout_width="0dp"
                         android:layout_weight="1.5"
                         android:layout_height="wrap_content"
                         android:gravity="bottom"></TextView>
 
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_weight=".5"
+                        android:layout_height="20dp"
+                        android:src="@drawable/timeicon"
+                        android:scaleType="centerInside"></ImageView>
                     <TextView
                         android:id="@+id/tv_markouttime"
                         android:textSize="15dp"
@@ -317,9 +336,12 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"></TextView>
+
+
+
                     <ImageView
                         android:id="@+id/iv_markout"
-                        android:visibility="invisible"
+                        android:visibility="gone"
                         android:layout_width="0dp"
                         android:layout_weight=".5"
                         android:layout_height="wrap_content"

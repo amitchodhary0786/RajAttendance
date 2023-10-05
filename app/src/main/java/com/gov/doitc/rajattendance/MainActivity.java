@@ -83,6 +83,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView iconmarkin,iconmarkout;
+    TextView textmatkin,textmarkout;
     int lgreencolor = -4823892;
     ImageView ivmarkin,ivmarkout;
 
@@ -162,6 +164,11 @@ public class MainActivity extends AppCompatActivity {
         ivmarkin = findViewById(R.id.iv_markin);
         ivmarkout = findViewById(R.id.iv_markout);
         version = findViewById(R.id.tv_version);
+
+        textmatkin = findViewById(R.id.tv_textmarkin);
+        textmarkout = findViewById(R.id.tv_textmarkout);
+        iconmarkin = findViewById(R.id.iv_iconmarkin);
+        iconmarkout = findViewById(R.id.iv_iconmarkout);
 
         logout = findViewById(R.id.iv_logout);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -317,16 +324,23 @@ public class MainActivity extends AppCompatActivity {
                                 if(status.equals("2005")){
                                     cvmarkin.startAnimation(animation);
                                     cvmarkin.setCardBackgroundColor(Color.GREEN);
-                                    ivmarkin.setVisibility(View.VISIBLE);
+                                   // ivmarkin.setVisibility(View.VISIBLE);
+                                    textmatkin.setTextColor(Color.WHITE);
+                                    iconmarkin.setImageResource(R.drawable.markinblankicon);
+
 
                                 }
                                 else if(status.equals("2006")){
                                     cvmarkin.startAnimation(animation);
                                     cvmarkout.startAnimation(animation1);
                                     cvmarkin.setCardBackgroundColor(Color.GREEN);
-                                    cvmarkout.setCardBackgroundColor(Color.YELLOW);
-                                    ivmarkin.setVisibility(View.VISIBLE);
-                                    ivmarkout.setVisibility(View.VISIBLE);
+                                    cvmarkout.setCardBackgroundColor(Color.RED);
+                                   // ivmarkin.setVisibility(View.VISIBLE);
+                                    //ivmarkout.setVisibility(View.VISIBLE);
+                                    textmatkin.setHintTextColor(Color.WHITE);
+                                    iconmarkin.setImageResource(R.drawable.markinblankicon);
+                                    textmarkout.setHintTextColor(Color.WHITE);
+                                    iconmarkout.setImageResource(R.drawable.markoutblankicon);
 
                                 }
                                 else if(status.equals("2007")){
@@ -450,7 +464,10 @@ public class MainActivity extends AppCompatActivity {
                                 if(status.equals("2000")){
                                     cvmarkin.startAnimation(animation);
                                     cvmarkin.setCardBackgroundColor(Color.GREEN);
-                                    ivmarkin.setVisibility(View.VISIBLE);
+                                   // ivmarkin.setVisibility(View.VISIBLE);
+                                    textmatkin.setHintTextColor(Color.WHITE);
+                                    iconmarkin.setImageResource(R.drawable.markinblankicon);
+
 
                                 }
                                 else if(status.equals("2002")){
@@ -527,8 +544,10 @@ public class MainActivity extends AppCompatActivity {
 
                                 if(status.equals("2001")){
                                     cvmarkout.startAnimation(animation1);
-                                    cvmarkout.setCardBackgroundColor(Color.YELLOW);
-                                    ivmarkout.setVisibility(View.VISIBLE);
+                                    cvmarkout.setCardBackgroundColor(Color.RED);
+                                    //ivmarkout.setVisibility(View.VISIBLE);
+                                    textmarkout.setHintTextColor(Color.WHITE);
+                                    iconmarkout.setImageResource(R.drawable.markoutblankicon);
 
                                 }
                                 else if(status.equals("2002")){
@@ -996,6 +1015,23 @@ public class MainActivity extends AppCompatActivity {
                 .show();
     }
 
+    private void markoutBeforemarkin(){
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.applogo)
+                .setTitle("MarkOUT Alert")
+                .setMessage("Before")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+
+                })
+                // .setNegativeButton("No", null)
+                .show();
+    }
+
     private void aadhaarConsernDialog(){
         View checkBoxView = View.inflate(MainActivity.this, R.layout.conserndialog, null);
         CheckBox checkBox = (CheckBox) checkBoxView.findViewById(R.id.checkbox);
@@ -1007,10 +1043,10 @@ public class MainActivity extends AppCompatActivity {
                 // Save to shared preferences
             }
         });
-        checkBox.setText("I hereby state that i have no objection in authenticating myself with AADHAAR based authentication system and consent to providing my AADHAAR Number, and OTP for AADHAAR based Authentication. I also give my explicit consent for accessing the mobile number and email address from AADHAAR System.");
+        checkBox.setText("मैं यह बताना चाहता हूं कि आधार आधारित प्रमाणीकरण प्रणाली के लिए मुझे स्वयं को प्रमाणित करने में कोई आपत्ति नहीं है तथा इसके लिए मैं अपना आधार नंबर/वीआईडी/यूआईडी टोकन  प्रदान करने के लिए अपनी सहमति देता हूं। साथ ही, मैं मानता हूं कि प्रमाणीकरण के लिए मैं जो फेस प्रदान कर रहा हूं, उसका उपयोग केवल  आधार प्रमाणीकरण प्रणाली के माध्यम से मेरी पहचान प्रमाणित करना है !");
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle(" Aadhaar Consern");
-        builder.setIcon(R.drawable.doitlogo);
+        builder.setTitle(" Aadhaar Consent");
+        builder.setIcon(R.drawable.aadhaaricon);
         builder.setView(checkBoxView)
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
