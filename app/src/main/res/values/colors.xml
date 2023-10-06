@@ -23,4 +23,6 @@
     <color name="light_green">#00cd00</color>
 
     <color name="appblue">#2B55E1</color>
+    <color name="markin">#086800</color>
+    <color name="markout">#880A11</color>
 </resources>

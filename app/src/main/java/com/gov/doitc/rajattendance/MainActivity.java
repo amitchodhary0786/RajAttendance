@@ -83,6 +83,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
+    String attendancestatus;
     ImageView iconmarkin,iconmarkout;
     TextView textmatkin,textmarkout;
     int lgreencolor = -4823892;
@@ -211,8 +212,14 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Cant't get Location..", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Flag = "MARKOUT";
-                        getRediousApicall(strLatitude,strLongitude,ssoid,ssoLoginTokan);
+                        if(attendancestatus.equals("2006")){
+
+                            alredyMarkoutdialog();
+                        }
+                        else {
+                            Flag = "MARKOUT";
+                            getRediousApicall(strLatitude, strLongitude, ssoid, ssoLoginTokan);
+                        }
 
                     }
                 }
@@ -249,8 +256,18 @@ public class MainActivity extends AppCompatActivity {
 //                            snackbar.show();
 //                        }
 //                        else {
+                        if(attendancestatus.equals("2005")){
+
+                            alredyMarkIndialog();
+                        }
+                        else if(attendancestatus.equals("2006")){
+                            alredyMarkIndialog();
+                        }
+                        else {
                             Flag = "MARKIN";
                             getRediousApicall(strLatitude,strLongitude,ssoid,ssoLoginTokan);
+                        }
+
                     //    }
                     }
                 }
@@ -289,7 +306,7 @@ public class MainActivity extends AppCompatActivity {
                                 String token = (String) json.getString("token");
                                 String message = (String) json.getString("message");
                                 String name = (String) json.getString("name");
-                                String status = (String) json.getString("status");
+                                attendancestatus = (String) json.getString("status");
                                 String response = (String) json.getString("response");
                                 String markInTime = (String) json.getString("markInTime");
                                 String markOutTime = (String) json.getString("markOutTime");
@@ -321,33 +338,34 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
 
-                                if(status.equals("2005")){
+                                if(attendancestatus.equals("2005")){
                                     cvmarkin.startAnimation(animation);
-                                    cvmarkin.setCardBackgroundColor(Color.GREEN);
+                                    cvmarkin.setCardBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.markin));
+                                    cvmarkout.setCardBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.white));
                                    // ivmarkin.setVisibility(View.VISIBLE);
-                                    textmatkin.setTextColor(Color.WHITE);
-                                    iconmarkin.setImageResource(R.drawable.markinblankicon);
+                                    textmatkin.setHintTextColor(Color.WHITE);
+                                    iconmarkin.setColorFilter(Color.WHITE);
 
 
                                 }
-                                else if(status.equals("2006")){
+                                else if(attendancestatus.equals("2006")){
                                     cvmarkin.startAnimation(animation);
                                     cvmarkout.startAnimation(animation1);
-                                    cvmarkin.setCardBackgroundColor(Color.GREEN);
-                                    cvmarkout.setCardBackgroundColor(Color.RED);
+                                    cvmarkin.setCardBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.markin));
+                                    cvmarkout.setCardBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.markout));
                                    // ivmarkin.setVisibility(View.VISIBLE);
                                     //ivmarkout.setVisibility(View.VISIBLE);
                                     textmatkin.setHintTextColor(Color.WHITE);
-                                    iconmarkin.setImageResource(R.drawable.markinblankicon);
+                                    iconmarkin.setColorFilter(Color.WHITE);
                                     textmarkout.setHintTextColor(Color.WHITE);
-                                    iconmarkout.setImageResource(R.drawable.markoutblankicon);
+                                    iconmarkout.setColorFilter(Color.WHITE);
 
                                 }
-                                else if(status.equals("2007")){
+                                else if(attendancestatus.equals("2007")){
                                     cvmarkin.setCardBackgroundColor(Color.WHITE);
                                     cvmarkout.setCardBackgroundColor(Color.WHITE);
-                                    ivmarkin.setVisibility(View.INVISIBLE);
-                                    ivmarkout.setVisibility(View.INVISIBLE);
+                                   // ivmarkin.setVisibility(View.INVISIBLE);
+                                   // ivmarkout.setVisibility(View.INVISIBLE);
 
                                 }
                                 else {
@@ -463,10 +481,11 @@ public class MainActivity extends AppCompatActivity {
 
                                 if(status.equals("2000")){
                                     cvmarkin.startAnimation(animation);
-                                    cvmarkin.setCardBackgroundColor(Color.GREEN);
+                                    cvmarkin.setCardBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.markin));
                                    // ivmarkin.setVisibility(View.VISIBLE);
                                     textmatkin.setHintTextColor(Color.WHITE);
-                                    iconmarkin.setImageResource(R.drawable.markinblankicon);
+                                    iconmarkin.setColorFilter(Color.WHITE);
+
 
 
                                 }
@@ -544,10 +563,10 @@ public class MainActivity extends AppCompatActivity {
 
                                 if(status.equals("2001")){
                                     cvmarkout.startAnimation(animation1);
-                                    cvmarkout.setCardBackgroundColor(Color.RED);
+                                    cvmarkout.setCardBackgroundColor(ContextCompat.getColor(MainActivity.this,R.color.markout));
                                     //ivmarkout.setVisibility(View.VISIBLE);
                                     textmarkout.setHintTextColor(Color.WHITE);
-                                    iconmarkout.setImageResource(R.drawable.markoutblankicon);
+                                    iconmarkout.setColorFilter(Color.WHITE);
 
                                 }
                                 else if(status.equals("2002")){
@@ -560,8 +579,12 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if(status.equals("2004")){
-                                    Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
+                                   // Toast.makeText(MainActivity.this, response, Toast.LENGTH_LONG).show();
+                                    markoutBeforemarkin();
 
+                                }
+                                else if(status.equals("2012")){
+                                    alredyMarkoutdialog();
                                 }
                                 else {
 
@@ -1019,7 +1042,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setIcon(R.drawable.applogo)
                 .setTitle("MarkOUT Alert")
-                .setMessage("Before")
+                .setMessage("First markin attenance before markout")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener()
                 {
                     @Override
@@ -1043,13 +1066,14 @@ public class MainActivity extends AppCompatActivity {
                 // Save to shared preferences
             }
         });
-        checkBox.setText("मैं यह बताना चाहता हूं कि आधार आधारित प्रमाणीकरण प्रणाली के लिए मुझे स्वयं को प्रमाणित करने में कोई आपत्ति नहीं है तथा इसके लिए मैं अपना आधार नंबर/वीआईडी/यूआईडी टोकन  प्रदान करने के लिए अपनी सहमति देता हूं। साथ ही, मैं मानता हूं कि प्रमाणीकरण के लिए मैं जो फेस प्रदान कर रहा हूं, उसका उपयोग केवल  आधार प्रमाणीकरण प्रणाली के माध्यम से मेरी पहचान प्रमाणित करना है !");
+        checkBox.setText("I hereby state that I have no objection to authenticating myself with the AADHAAR-based authentication system and consent to provide my AADHAAR Number and my Face biometrics for the AADHAAR-based Authentication for the aadhaar based biometric attendance system application. \n" +
+                "मैं इसके द्वारा कहता हूं कि मुझे आधार-आधारित प्रमाणीकरण प्रणाली के साथ खुद को प्रमाणित करने में कोई आपत्ति नहीं है और मैं आधार सक्षम बायोमेट्रिक उपस्थिति प्रणाली एप्लीकेशन में उपस्थिति दर्ज के लिए आधार-आधारित प्रमाणीकरण के लिए अपना आधार नंबर और अपना चेहरा बायोमेट्रिक्स प्रदान करने के लिए सहमति देता हूं।");
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(" Aadhaar Consent");
         builder.setIcon(R.drawable.aadhaaricon);
         builder.setView(checkBoxView)
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                .setPositiveButton("I Agree", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         if(checkBox.isChecked()){
                             dialog.cancel();

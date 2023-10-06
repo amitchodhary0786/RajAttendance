@@ -167,8 +167,7 @@
                     android:layout_height="wrap_content"
                     android:text="Amit chodhary"
                     android:fontFamily="@font/poppinsmed"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="5dp"></TextView>
+                    android:textColor="@color/black"></TextView>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -202,7 +201,6 @@
             android:layout_weight="2"
             android:background="@color/white">
             <androidx.cardview.widget.CardView
-                android:alpha=".7"
                 android:id="@+id/cv_markin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -229,11 +227,11 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="40dp"
-                        android:src="@drawable/markinicon"></ImageView>
+                        android:src="@drawable/white_icon_markin"
+                        app:tint="@color/appblue"></ImageView>
                     <TextView
                         android:id="@+id/tv_textmarkin"
                         android:textSize="22dp"
-                        android:textStyle="bold"
                         android:textColor="@color/appblue"
                         android:textColorHint="@color/appblue"
                         android:fontFamily="@font/poppinsreg"
@@ -250,7 +248,8 @@
                         android:layout_weight=".5"
                         android:layout_height="20dp"
                         android:src="@drawable/timeicon"
-                        android:scaleType="centerInside"></ImageView>
+                        android:scaleType="centerInside"
+                        android:padding="2dp"></ImageView>
                     <TextView
                         android:id="@+id/tv_markintime"
                         android:textSize="15dp"
@@ -258,7 +257,7 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:fontFamily="@font/poppinsreg"
-                        android:hint="00:00AM"
+                        android:hint="00:00"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"></TextView>
@@ -276,7 +275,6 @@
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:alpha=".7"
                 android:id="@+id/cv_markout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -304,12 +302,12 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="40dp"
-                        android:src="@drawable/markouticon"></ImageView>
+                        android:src="@drawable/white_icon_markout"
+                        app:tint="@color/appblue"></ImageView>
 
                     <TextView
                         android:id="@+id/tv_textmarkout"
                         android:textSize="22dp"
-                        android:textStyle="bold"
                         android:textColor="@color/appblue"
                         android:textColorHint="@color/appblue"
                         android:fontFamily="@font/poppinsreg"
@@ -320,6 +318,7 @@
                         android:gravity="bottom"></TextView>
 
                     <ImageView
+                        android:padding="2dp"
                         android:layout_width="0dp"
                         android:layout_weight=".5"
                         android:layout_height="20dp"
@@ -332,7 +331,7 @@
                         android:textColor="@color/white"
                         android:textColorHint="@color/white"
                         android:fontFamily="@font/poppinsreg"
-                        android:hint="00:00AM"
+                        android:hint="00:00"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"></TextView>

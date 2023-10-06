@@ -81,8 +81,8 @@ public class SsologinScreen extends AppCompatActivity {
                 @Override
                 public void run() {
                     try {
-                        //enc_pass = passwordencreaption(str_password);
-                        SsologinfunctionsDirect(str_email,str_password);
+                        enc_pass = passwordencreaption(str_password);
+                        SsologinfunctionsDirect(str_email,enc_pass);
                        // apiCall();
 
                     } catch (Exception e) {
