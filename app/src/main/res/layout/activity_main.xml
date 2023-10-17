@@ -165,7 +165,7 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Amit chodhary"
+                    android:text=""
                     android:fontFamily="@font/poppinsmed"
                     android:textColor="@color/black"></TextView>
             </LinearLayout>
@@ -186,7 +186,7 @@
                     android:id="@+id/tv_deptname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rajasthan Technical University"
+                    android:text=""
                     android:fontFamily="@font/poppinsmed"
                     android:gravity="bottom"
                     android:textColor="@color/black"></TextView>

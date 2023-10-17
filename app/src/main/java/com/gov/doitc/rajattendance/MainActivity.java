@@ -83,7 +83,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends AppCompatActivity {
-    String attendancestatus;
+    String attendancestatus = "100";
     ImageView iconmarkin,iconmarkout;
     TextView textmatkin,textmarkout;
     int lgreencolor = -4823892;
@@ -486,6 +486,9 @@ public class MainActivity extends AppCompatActivity {
                                     textmatkin.setHintTextColor(Color.WHITE);
                                     iconmarkin.setColorFilter(Color.WHITE);
 
+                                    Snackbar snackbar = Snackbar
+                                            .make(textmatkin, "Attendance Successfuly recorded", Snackbar.LENGTH_LONG);
+                                    snackbar.show();
 
 
                                 }
@@ -567,6 +570,10 @@ public class MainActivity extends AppCompatActivity {
                                     //ivmarkout.setVisibility(View.VISIBLE);
                                     textmarkout.setHintTextColor(Color.WHITE);
                                     iconmarkout.setColorFilter(Color.WHITE);
+
+                                    Snackbar snackbar = Snackbar
+                                            .make(textmarkout, "Markout Successfuly recorded", Snackbar.LENGTH_LONG);
+                                    snackbar.show();
 
                                 }
                                 else if(status.equals("2002")){
