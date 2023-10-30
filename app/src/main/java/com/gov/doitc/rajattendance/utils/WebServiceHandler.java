@@ -4,6 +4,7 @@ import static com.gov.doitc.rajattendance.utils.WebUrls.FACERD_TRANSACTION;
 import static com.gov.doitc.rajattendance.utils.WebUrls.FACERD_TRANSACTIONOUT;
 import static com.gov.doitc.rajattendance.utils.WebUrls.Login_Status;
 import static com.gov.doitc.rajattendance.utils.WebUrls.calculaterediousapi;
+import static com.gov.doitc.rajattendance.utils.WebUrls.getDept;
 import static com.gov.doitc.rajattendance.utils.WebUrls.ssologin;
 
 import android.annotation.SuppressLint;
@@ -482,6 +483,7 @@ public class WebServiceHandler {
             }
         });
     }
+
 
 
 

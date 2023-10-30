@@ -12,6 +12,9 @@ public class WebUrls {
     public static final String Login_Status = "http://172.22.33.6:8060/mobile/getLoginStatus";
 
 
+    public static final String getDept = "https://rajattendance.rajasthan.gov.in/UIDAttendance/master/attendance/json/department";
+
+
 
 
 

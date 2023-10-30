@@ -39,6 +39,7 @@ public class SpleshScreen extends AppCompatActivity {
         splesh = findViewById(R.id.tv_splesh);
 
         versionName = BuildConfig.VERSION_NAME;
+
         spleshfunction();
     }
 
@@ -160,4 +161,5 @@ public class SpleshScreen extends AppCompatActivity {
                 .show();
 
     }
+
 }
