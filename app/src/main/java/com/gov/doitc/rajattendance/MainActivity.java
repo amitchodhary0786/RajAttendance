@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     LocationRequest locationRequest;
     boolean isGPSEnabled = false;
     String Flag = "";
-    TextView tvname,deptname,markintime,markouttime;
+    TextView tvname,deptname,markintime,markouttime,tv_year,tv_coursename;
     String strname,strdeptname;
 
     String DPID, HMAC, CI, SKEYINSIDE, DetaPID, RSDVER, RDSID, DC, MI, MC,LOGinLOGouttime;
@@ -160,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
 
         tvname = findViewById(R.id.tv_name);
         deptname = findViewById(R.id.tv_deptname);
+        tv_year = findViewById(R.id.tv_year);
+        tv_coursename = findViewById(R.id.tv_coursename);
         markintime = findViewById(R.id.tv_markintime);
         markouttime = findViewById(R.id.tv_markouttime);
         ivmarkin = findViewById(R.id.iv_markin);
@@ -216,6 +218,9 @@ public class MainActivity extends AppCompatActivity {
 
                             alredyMarkoutdialog();
                         }
+                        else if(attendancestatus.equals("2020")){
+                            holiDayDialog();
+                        }
                         else {
                             Flag = "MARKOUT";
                             getRediousApicall(strLatitude, strLongitude, ssoid, ssoLoginTokan);
@@ -262,6 +267,9 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else if(attendancestatus.equals("2006")){
                             alredyMarkIndialog();
+                        }
+                        else if(attendancestatus.equals("2020")){
+                            holiDayDialog();
                         }
                         else {
                             Flag = "MARKIN";
@@ -312,6 +320,10 @@ public class MainActivity extends AppCompatActivity {
                                 String markOutTime = (String) json.getString("markOutTime");
                                 String appversion = json.getString("appVersion");
 
+                                String courseName = (String) json.getString("courseName");
+                                String yearName = json.getString("yearName");
+
+
                                 version.setText(appversion);
 
                                 //String status = "2007";
@@ -322,6 +334,8 @@ public class MainActivity extends AppCompatActivity {
 
                                 tvname.setText(name);
                                 deptname.setText(collegeName);
+                                tv_year.setText(yearName);
+                                tv_coursename.setText(courseName);
 
                                 if(markInTime.equals("null")){
 
@@ -1002,13 +1016,37 @@ public class MainActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.clear();
                             editor.apply();
+                            Intent intent = new Intent(MainActivity.this, SsologinScreen.class);
+                            intent.putExtra("finish", true); // if you are checking for this in your other Activities
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP |
+                                    Intent.FLAG_ACTIVITY_CLEAR_TASK |
+                                    Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
                             finish();
+
                         }
 
                     })
                     .setNegativeButton("No", null)
                     .show();
 
+    }
+
+    private void holiDayDialog(){
+        new AlertDialog.Builder(this)
+                .setIcon(R.drawable.applogo)
+                .setTitle("MarkIN Alert")
+                .setMessage("Holiday today")
+                .setPositiveButton("ok", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+
+                })
+                // .setNegativeButton("No", null)
+                .show();
     }
 
     private void alredyMarkIndialog(){

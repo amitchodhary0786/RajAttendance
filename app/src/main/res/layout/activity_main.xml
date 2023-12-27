@@ -62,7 +62,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.3"
+        android:layout_weight="1"
         android:gravity="right"
         android:orientation="vertical"
         android:background="@drawable/loginback"
@@ -136,7 +136,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.2"
+        android:layout_weight="2.5"
         android:gravity="top"
         android:orientation="vertical"
         android:background="@drawable/lldesign"
@@ -157,9 +157,10 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/user"
+                    android:src="@drawable/student"
                     android:scaleType="centerInside"
-                    app:tint="@color/design_default_color_primary"></ImageView>
+                    app:tint="@color/design_default_color_primary"
+                    android:padding="5dp"></ImageView>
 
                 <TextView
                     android:id="@+id/tv_name"
@@ -169,6 +170,63 @@
                     android:fontFamily="@font/poppinsmed"
                     android:textColor="@color/black"></TextView>
             </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/year"
+                        android:scaleType="centerInside"
+                        app:tint="@color/design_default_color_primary"
+                        android:padding="10dp"></ImageView>
+
+                    <TextView
+                        android:id="@+id/tv_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:fontFamily="@font/poppinsmed"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="15dp">
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/course"
+                        android:scaleType="centerInside"
+                        app:tint="@color/design_default_color_primary"
+                        android:padding="10dp"></ImageView>
+
+                    <TextView
+                        android:id="@+id/tv_coursename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:fontFamily="@font/poppinsmed"
+                        android:textColor="@color/black"></TextView>
+                </LinearLayout>
+            </LinearLayout>
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -178,9 +236,10 @@
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:src="@drawable/house"
+                    android:src="@drawable/college"
                     android:scaleType="centerInside"
-                    app:tint="@color/design_default_color_primary"></ImageView>
+                    app:tint="@color/design_default_color_primary"
+                    android:padding="10dp"></ImageView>
 
                 <TextView
                     android:id="@+id/tv_deptname"
@@ -191,6 +250,8 @@
                     android:gravity="bottom"
                     android:textColor="@color/black"></TextView>
             </LinearLayout>
+
+
 
         </LinearLayout>
         <LinearLayout
